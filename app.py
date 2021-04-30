@@ -75,10 +75,10 @@ def index():
             # Post request to upload!
             m = MultipartEncoder(fields={"Submit": "Upload File", "boundary": "----WebKitFormBoundaryJgGlLbKTTu3Ly2BR", "AttachToDocument": "1", "lOperations": "UploadExternalDocument", "ExternalDocumentName": fileName, "AttachDocID": docID, "ExternalDocumentFile": (fileName, open('tBD/'+fileName, 'rb'), 'pdf')})
             #print("Got this far!")
-            #url = "https://osse.pcgeducation.com/easyiep.plx?op=upload_external_documents&StudentID="+s_i+"&CustomerName=dcelhpcs&SessionID="+sessionID
-            url2 = "https://httpbin.org/post"
+            url = "https://osse.pcgeducation.com/easyiep.plx?op=upload_external_documents&StudentID="+s_i+"&CustomerName=dcelhpcs&SessionID="+sessionID
+            #url2 = "https://httpbin.org/post"
 
-            r = s.post(url2, data=m, headers={'Content-Type': m.content_type, 'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36"})
+            r = s.post(url, data=m, headers={'Content-Type': m.content_type, 'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36"})
             if os.path.exists('tBD/'+fileName):
                 os.remove('tBD/'+fileName)
             # print(r.status_code)
