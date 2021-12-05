@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lions Uploader</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="content" style="margin: auto; width: 40%;">
+    <h1 style="text-align: center;">Mountain Lions EasyIEP Uploader</h1>
+    <br>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <!-- <input type="text" name="username" id="username">
+        <input type="text" name="password" id="password"> -->
+
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password">
+        <br><br><br>
+
+        <p>Please select the type of document you are uploading:</p>
+        <input type="radio" id="esy" name="doc_type" value="esy">
+        <label for="esy">ESY Sheet</label><br>
+        <input type="radio" id="transp" name="doc_type" value="transp">
+        <label for="transp">Transportation Sheet</label><br>
+        <input type="radio" id="iepsig" name="doc_type" value="iepsig">
+        <label for="iepsig">IEP Signature Page</label><br>
+        <input type="radio" id="misc" name="doc_type" value="misc">
+        <label for="misc">IEP Meeting Notes / Signature Page</label>
+        <br><br><br>
+
+        <label for="myfile">Select the file:</label>
+        <input type="file" id="myfile" name="myfile" accept=".pdf">
+        <br><br><br><br>
+
+        <div style="text-align: center;">
+            <input type="submit" value="Submit">
+        </div>
+
+    </form>
+
+    
+</div>
+
+{% endblock %}
